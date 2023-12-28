@@ -2,7 +2,6 @@ package presentacion;
 
 import negocio.OrdenVentaControl;
 import entidades.Cliente;
-import javax.management.StringValueExp;
 import javax.swing.table.TableRowSorter;
 
 public class DialogCliente extends javax.swing.JDialog {
@@ -32,6 +31,10 @@ public class DialogCliente extends javax.swing.JDialog {
         tblListado.setRowSorter(orden);
     }
 
+    /**
+     * Captures the selected client from the table and sets the values to the 'cliente' object.
+     * This method is called when there is only one row selected in the table.
+     */
     private void capturarCliente() {
         if (tblListado.getSelectedRowCount() == 1) {
             int fila = tblListado.getSelectedRow();
@@ -167,6 +170,10 @@ public class DialogCliente extends javax.swing.JDialog {
         this.listado(txtBuscar.getText());
     }//GEN-LAST:event_txtBuscarKeyReleased
 
+    /**
+     * This method is called when the "Seleccionar" button is clicked.
+     * It captures the selected client and disposes the dialog.
+     */
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
         capturarCliente();
         dispose();

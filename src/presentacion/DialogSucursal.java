@@ -56,19 +56,12 @@ public class DialogSucursal extends javax.swing.JDialog {
         this.sucursal = sucursal;
     }
 
-//    public void listado(int idCliente) {
-//        this.cliente.setIdCliente(idCliente);
-//        tblListado.setModel(this.control.listarSucursal(this.cliente.getIdCliente()));
-//        TableRowSorter orden = new TableRowSorter(tblListado.getModel());
-//        tblListado.setRowSorter(orden);
-//    }
-//    
-//    private void listado(Cliente cliente) {
-//        this.cliente = cliente;
-//        tblListado.setModel(this.control.listarSucursal(this.cliente.getIdCliente()));
-//        TableRowSorter orden = new TableRowSorter(tblListado.getModel());
-//        tblListado.setRowSorter(orden);
-//    }
+    /**
+     * Displays a list of branches for a given client.
+     * 
+     * @param idCliente The ID of the client.
+     * @param nombreCliente The name of the client.
+     */
     public void listado(int idCliente, String nombreCliente) {
         this.cliente.setIdCliente(idCliente);
         this.cliente.setNombre(nombreCliente);
@@ -77,6 +70,11 @@ public class DialogSucursal extends javax.swing.JDialog {
         tblListado.setRowSorter(orden);
     }
 
+    /**
+     * Captures the selected branch information from the table and sets it to the 'sucursal' object.
+     * If only one row is selected in the table, the method retrieves the values from the selected row
+     * and sets them to the corresponding properties of the 'sucursal' object.
+     */
     private void capturarSucursal() {
         if (tblListado.getSelectedRowCount() == 1) {
             int fila = tblListado.getSelectedRow();

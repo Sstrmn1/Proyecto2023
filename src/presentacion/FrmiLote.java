@@ -9,12 +9,20 @@ import java.util.Calendar;
 import entidades.Articulo;
 import entidades.Laboratorio;
 
+/**
+ * This class represents a GUI form for managing Lote objects.
+ */
 public class FrmiLote extends javax.swing.JInternalFrame {
 
     //atributos
     public final LoteControl CONTROL;
     private String filtro;
 
+    /**
+     * This class constructor represents the FrmiLote form.
+     * It is responsible for initializing the components, setting default values,
+     * and disabling certain text fields.
+     */
     public FrmiLote() {
         initComponents();
         this.filtro = "a.descripcion";
@@ -30,6 +38,12 @@ public class FrmiLote extends javax.swing.JInternalFrame {
     }
 
     //metodos
+    /**
+     * Updates the table with a list of items based on the given search text and field.
+     * 
+     * @param texto The search text to filter the items.
+     * @param campo The field to search for the items.
+     */
     private void listado(String texto, String campo) {
         tblListado.setModel(this.CONTROL.listar(texto, campo));
         TableRowSorter orden = new TableRowSorter(tblListado.getModel());
@@ -37,6 +51,11 @@ public class FrmiLote extends javax.swing.JInternalFrame {
         ocultarColumnas();
     }
 
+    /**
+     * Sets the value of the 'filtro' variable based on the selected radio button.
+     * If the 'rbtnDescripcion' radio button is selected, the value of 'filtro' will be set to "a.descripcion".
+     * If the 'rbtnArticulo' radio button is selected, the value of 'filtro' will be set to "a.codigo".
+     */
     private void seleccionarFiltro() {
         if (rbtnDescripcion.isSelected()) {
             this.filtro = "a.descripcion";
@@ -46,6 +65,9 @@ public class FrmiLote extends javax.swing.JInternalFrame {
         }
     }
 
+    /**
+     * Loads the data into the combo boxes.
+     */
     private void listarCombobox() {
         cboArticulo.setModel(this.CONTROL.cargarArticulo());
         cboLaboratorio.setModel(this.CONTROL.cargarLaboratorio());
@@ -94,6 +116,9 @@ public class FrmiLote extends javax.swing.JInternalFrame {
 
     }
 
+    /**
+     * Hides specific columns in the table.
+     */
     private void ocultarColumnas() {
         tblListado.getColumnModel().getColumn(0).setMaxWidth(30);
         tblListado.getColumnModel().getColumn(0).setMinWidth(30);
@@ -467,6 +492,14 @@ public class FrmiLote extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Performs the action when the "Guardar" button is clicked.
+     * It checks if all the required fields (articulo, laboratorio, stock, precio) are filled.
+     * If any of the fields is empty, it displays a warning message and returns.
+     * If the user confirms the edit, it retrieves the values from the input fields and updates the record.
+     * It then displays a success message if the update is successful, or an error message otherwise.
+     * Finally, it clears the input fields, deactivates the form, and selects the first tab.
+     */
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         if (cboArticulo.getSelectedItem() == null
                 || cboLaboratorio.getSelectedItem() == null
@@ -610,6 +643,18 @@ public class FrmiLote extends javax.swing.JInternalFrame {
         desactivar();  // TODO add your handling code here:
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    /**
+     * Performs the action when the "Registrar" button is clicked.
+     * It validates the input fields for article, laboratory, stock, and price.
+     * If any of the fields are empty or the selected items are null, it displays a warning message.
+     * Otherwise, it retrieves the selected article and laboratory information,
+     * as well as the stock, price, and other details for the new record.
+     * It generates a unique code for the batch based on the fabrication date.
+     * Then, it calls the insertar() method of the CONTROL object to insert the record into the database.
+     * If the insertion is successful, it displays an information message.
+     * Otherwise, it displays an error message.
+     * Finally, it clears the input fields, selects the first tab, and refreshes the list.
+     */
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         if (cboArticulo.getSelectedItem() == null
                 || cboLaboratorio.getSelectedItem() == null

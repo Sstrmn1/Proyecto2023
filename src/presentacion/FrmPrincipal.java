@@ -11,6 +11,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         cargarOpcionesMenu();
     }
 
+    /**
+     * Loads the menu options based on the user's role.
+     * If the user's role is null, displays an alert message and exits the system.
+     * Enables or disables menu options based on the user's role.
+     * Sets the labels with the user's name, last name, and role.
+     */
     private void cargarOpcionesMenu() {
         if (clases.Variables.rolNombre == null) {
             mensajeAlerta("Debe ingresar al sistema mediante verificacion de usuario.");
@@ -334,10 +340,24 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
+    /**
+     * Handles the action performed when the "Salir" menu item is clicked.
+     * Exits the application by calling System.exit(0).
+     * 
+     * @param evt the action event
+     */
     private void mnuiSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_mnuiSalirActionPerformed
 
+ 
+    /**
+     * Event handler for the "mnuiRoles" menu item.
+     * Opens a new instance of FrmiRol and adds it to the desktop pane.
+     * Sets the visibility of the new form to true.
+     * 
+     * @param evt The ActionEvent that triggered the event.
+     */
     private void mnuiRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuiRolesActionPerformed
         FrmiRol frm = new FrmiRol();
         escritorio.add(frm);
@@ -412,6 +432,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         frm.setVisible(true);
     }//GEN-LAST:event_mnuiKardexActionPerformed
 
+    /**
+     * The main method is the entry point of the application.
+     * It sets the look and feel of the user interface and creates and displays the main form.
+     *
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -136,6 +136,14 @@ public class FrmLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Performs the action when the "Ingresar" button is clicked.
+     * Checks if the email and password fields are empty. If so, displays an error message.
+     * Otherwise, calls the login method of the UsuarioControl class to validate the credentials.
+     * If the login is successful (resp equals "1"), closes the current login form and opens the main form.
+     * If the login is unsuccessful, displays an error message indicating incorrect login credentials.
+     * If the user is inactive (resp equals "2"), displays a warning message indicating that the user does not have access to the system.
+     */
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         // TODO add your handling code here:
         if (txtEmail.getText().isEmpty() || txtPassword.getText().isEmpty()) {
