@@ -1,0 +1,11 @@
+usuario:	admin@admin.com
+password:	admin
+
+usuario:	ventas@ventas.com
+password:	ventas
+
+usuario:	regencia@regencia.com
+password:	regencia
+
+usuario:	almacenes@almacenes.com
+password:	almacenes

@@ -31,12 +31,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/presentacion/FrmiLote.java</file>
+            <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/negocio/SucursalControl.java</file>
             <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/entidades/Cliente.java</file>
             <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/datos/OrdenVentaDAO.java</file>
+            <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/datos/LaboratorioDAO.java</file>
             <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/datos/SucursalDAO.java</file>
             <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/basedatos/Conexion.java</file>
             <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/entidades/Laboratorio.java</file>
+            <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/negocio/OrdenVentaControl.java</file>
             <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/presentacion/FrmiCliente.java</file>
+            <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/negocio/FormaFarmaceuticaControl.java</file>
             <file>file:/D:/utb/proyectos/FABIOCAMACHOPROYECTOFINAL/Proyecto/src/datos/KardexDAO.java</file>
         </group>
     </open-files>
